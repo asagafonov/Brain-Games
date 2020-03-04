@@ -1,0 +1,24 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "description": "A brain games package",
+  "main": "brain-games.js",
+  "scripts": {
+    "test": "console.log(\"Welcome to the Brain Games!\")"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asagafonov/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "braingames",
+    "game",
+    "project]"
+  ],
+  "author": "asagafonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asagafonov/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/asagafonov/frontend-project-lvl1#readme"
+}
