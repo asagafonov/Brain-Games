@@ -7,6 +7,9 @@
   "scripts": {
     "test": "console.log(\"Welcome to the Brain Games!\")"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/asagafonov/frontend-project-lvl1.git"
