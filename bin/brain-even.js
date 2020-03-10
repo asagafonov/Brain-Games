@@ -1,28 +1,27 @@
 import readlineSync from 'readline-sync';
+import askForName from './ask-for-name.js';
 
-const generateRandomNumber = () => {
-  return Math.floor(Math.random() * 100);
-};
+const generateRandomNumber = () => Math.floor(Math.random() * 100);
 
 const askWhetherIsEven = () => {
-  let randomNumber = generateRandomNumber();
+  const randomNumber = generateRandomNumber();
   if (randomNumber % 2 === 0) {
-    if (readlineSync.keyInYN(`Question: ${randomNumber}`)) {
+    if (readlineSync.keyInYN(`Question: is ${randomNumber} even?`)) {
       console.log('Your answer is "yes" \nCorrect!');
       return true;
-    } else {
-      console.log(`Your answer is "no" \n"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
-      return false;
     }
-  } else if (randomNumber % 2 !== 0) {
-    if (readlineSync.keyInYN(`Question: ${randomNumber}`)) {
+    console.log(`Your answer is "no" \n"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
+    return false;
+  }
+  if (randomNumber % 2 !== 0) {
+    if (readlineSync.keyInYN(`Question: is ${randomNumber} even?`)) {
       console.log(`Your answer is "yes" \n"yes" is the wrong answer ;(. Correct answer was "no" \nLet's try it again, ${askForName}!`);
       return false;
-    } else {
-      console.log('Your answer is "no" \nCorrect!');
-      return true;
     }
+    console.log('Your answer is "no" \nCorrect!');
+    return true;
   }
+  return false;
 };
 
 const brainEven = () => {
@@ -33,7 +32,7 @@ const brainEven = () => {
     if (question === true) {
       iteration += 1;
       if (iteration === 3) {
-        console.log(`Congratulations, ${askForName}!`);
+        console.log(`Congratulations, ${askForName}! You win!`);
       }
     } else if (question === false) {
       break;

@@ -1,9 +1,8 @@
-import readlineSync from 'readline-sync';
+import askForName from './ask-for-name.js';
 
 const brainGames = () => {
-  console.log('Welcome to the Brain Games!');
-  const askForName = readlineSync.question('May I have your name? ');
-  const greetUser = `Hello, ${askForName}!`;
+  const name = askForName;
+  const greetUser = `Hello, ${name}!`;
   console.log(greetUser);
 };
 
