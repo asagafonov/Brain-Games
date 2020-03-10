@@ -1,9 +1,13 @@
-workflow "Pull Request" {
-  on = "pull_request"
-  resolves = ["ESLint"]
-}
+on:
+  push:
+  pull_request:
 
-action "ESLint" {
-  uses = "hallee/eslint-action@master"
-  secrets = ["GITHUB_TOKEN"]
-}
+jobs:
+  eslint:
+    name: eslint
+    runs-on: ubuntu-latest
+    steps:
+    - name: eslint
+      uses: icrawl/action-eslint@v1
+      with:
+        custom-glob: apps # only if a different glob is needed, default: src
