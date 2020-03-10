@@ -8,22 +8,18 @@ const askWhetherIsEven = () => {
   let randomNumber = generateRandomNumber();
   if (randomNumber % 2 === 0) {
     if (readlineSync.keyInYN(`Question: ${randomNumber}`)) {
-      console.log('Your answer is "yes"');
-      console.log('Correct!');
+      console.log('Your answer is "yes" \nCorrect!');
       return true;
     } else {
-      console.log('Your answer is "no"');
-      console.log(`"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
+      console.log(`Your answer is "no" \n"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
       return false;
     }
   } else if (randomNumber % 2 !== 0) {
     if (readlineSync.keyInYN(`Question: ${randomNumber}`)) {
-      console.log('Your answer is "yes"');
-      console.log(`"yes" is the wrong answer ;(. Correct answer was "no" \nLet's try it again, ${askForName}!`);
+      console.log(`Your answer is "yes" \n"yes" is the wrong answer ;(. Correct answer was "no" \nLet's try it again, ${askForName}!`);
       return false;
     } else {
-      console.log('Your answer is "no"');
-      console.log('Correct!');
+      console.log('Your answer is "no" \nCorrect!');
       return true;
     }
   }
