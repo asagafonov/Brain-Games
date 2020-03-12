@@ -1,10 +1,14 @@
 import readlineSync from 'readline-sync';
 import askForName from './ask-for-name.js';
 
-const generateRandomNumber = () => Math.floor(Math.random() * 100);
+const generateRandomNumberInRange = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+};
 
 const askWhetherIsEven = () => {
-  const randomNumber = generateRandomNumber();
+  const randomNumber = generateRandomNumberInRange(1, 100);
   if (randomNumber % 2 === 0) {
     if (readlineSync.keyInYN(`Question: is ${randomNumber} even?`)) {
       console.log('Your answer is "yes" \nCorrect!');

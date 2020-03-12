@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 import askForName from './ask-for-name.js'
 
-const generateRandomNumber = () => Math.floor(Math.random() * 100);
-
 const generateRandomNumberInRange = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -23,8 +21,8 @@ const generateOperator = () => {
 };
 
 const generateEquation = () => {
-  const firstOperand = generateRandomNumber();
-  const secondOperand = generateRandomNumber();
+  const firstOperand = generateRandomNumberInRange(1, 100);
+  const secondOperand = generateRandomNumberInRange(1, 100);
   const operator = generateOperator();
   const equation = `${firstOperand} ${operator} ${secondOperand}`;
   return equation;
