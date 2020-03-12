@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
-import askForName from './ask-for-name.js'
+import askForName from './ask-for-name.js';
 
 const generateRandomNumberInRange = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+  const minValue = Math.ceil(min);
+  const maxValue = Math.floor(max);
+  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 };
 
 const operatorIndex = () => generateRandomNumberInRange(1, 4);
@@ -15,9 +15,8 @@ const generateOperator = () => {
     return '+';
   } if (operatorInd === 2) {
     return '-';
-  } else {
-    return '*';
   }
+  return '*';
 };
 
 const generateEquation = () => {
@@ -46,17 +45,17 @@ const brainCalc = () => {
   console.log('What is the result of the following expression?');
   let iteration = 0;
   while (iteration < 3) {
-  const equation = generateEquation();
-  const answer = readlineSync.question(`Calculate ${equation} --> `);
-  if (Number(answer) === solveEquation(equation)) {
-    iteration += 1;
-    console.log(`Your answer is ${answer} \nCorrect!`);
-    if (iteration === 3) {
-      console.log(`Congratulations, ${askForName}! You win!`);
-    }
-  } else {
-    console.log(`Your answer is ${answer} \n${answer} is the wrong answer ;(. Correct answer was ${solveEquation(equation)} \nLet's try it again, ${askForName}!`);
-    break;
+    const equation = generateEquation();
+    const answer = readlineSync.question(`Calculate ${equation} --> `);
+    if (Number(answer) === solveEquation(equation)) {
+      iteration += 1;
+      console.log(`Your answer is ${answer} \nCorrect!`);
+      if (iteration === 3) {
+        console.log(`Congratulations, ${askForName}! You win!`);
+      }
+    } else {
+      console.log(`Your answer is ${answer} \n${answer} is the wrong answer ;(. Correct answer was ${solveEquation(equation)} \nLet's try it again, ${askForName}!`);
+      break;
     }
   }
 };

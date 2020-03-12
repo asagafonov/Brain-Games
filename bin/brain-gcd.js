@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
-import askForName from './ask-for-name.js'
+import askForName from './ask-for-name.js';
 
 const generateRandomNumberInRange = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+  const minValue = Math.ceil(min);
+  const maxValue = Math.floor(max);
+  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 };
 
 const getTwoNumbers = () => {
@@ -39,14 +39,14 @@ const brainGCD = () => {
     const equation = getTwoNumbers();
     const answer = readlineSync.question(`Question: ${equation} `);
     if (Number(answer) === getAnswer(equation)) {
-    iteration += 1;
-    console.log(`Your answer is ${answer} \nCorrect!`);
+      iteration += 1;
+      console.log(`Your answer is ${answer} \nCorrect!`);
       if (iteration === 3) {
-      console.log(`Congratulations, ${askForName}! You win!`);
+        console.log(`Congratulations, ${askForName}! You win!`);
       }
     } else {
-    console.log(`Your answer is ${answer} \n${answer} is the wrong answer ;(. Correct answer was ${getAnswer(equation)} \nLet's try it again, ${askForName}!`);
-    break;
+      console.log(`Your answer is ${answer} \n${answer} is the wrong answer ;(. Correct answer was ${getAnswer(equation)} \nLet's try it again, ${askForName}!`);
+      break;
     }
   }
 };
