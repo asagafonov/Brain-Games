@@ -50,5 +50,3 @@ const brainGCD = () => {
     }
   }
 };
-
-export default brainGCD;
