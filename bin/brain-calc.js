@@ -36,9 +36,8 @@ const solveEquation = (string) => {
     return firstOperand + secondOperand;
   } if (operator === '-') {
     return firstOperand - secondOperand;
-  } if (operator === '*') {
-    return firstOperand * secondOperand;
   }
+  return firstOperand * secondOperand;
 };
 
 const brainCalc = () => {
