@@ -7,17 +7,27 @@ const generateRandomNumberInRange = (min, max) => {
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 };
 
+const isNumberPrime = (num) => {
+  const array = [];
+  for (let i = num; i > 0; i -= 1) {
+    if (num % i === 0) {
+      array.push(i);
+    }
+  }
+  return array.length === 2;
+}
+
 const askWhetherIsPrime = () => {
   const randomNumber = generateRandomNumberInRange(1, 100);
-  if (//если число — простое) {
-    if (readlineSync.keyInYN(`Is the number ${number} prime?`)) {
+  if (isNumberPrime(randomNumber)) {
+    if (readlineSync.keyInYN(`Is the number ${randomNumber} prime?`)) {
       console.log('Your answer is "yes" \nCorrect!');
       return true;
     }
     console.log(`Your answer is "no" \n"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
     return false;
   } else {
-    if (readlineSync.keyInYN(`Is the number ${number} prime?`)) {
+    if (readlineSync.keyInYN(`Is the number ${randomNumber} prime?`)) {
       console.log(`Your answer is "yes" \n"yes" is the wrong answer ;(. Correct answer was "no" \nLet's try it again, ${askForName}!`);
       return false;
     }
