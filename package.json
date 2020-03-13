@@ -2,7 +2,7 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "A brain games package",
-  "main": "src/index.js",
+  "main": "bin/index.js",
   "type": "module",
   "scripts": {
     "test": "console.log(\"Welcome to the Brain Games!\")"
