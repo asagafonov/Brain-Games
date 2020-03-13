@@ -2,16 +2,10 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "A brain games package",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "console.log(\"Welcome to the Brain Games!\")"
-  },
-  "dependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -20,7 +14,7 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "src/bin/brain-games.js"
   },
   "repository": {
     "type": "git",
