@@ -22,6 +22,11 @@ jobs:
           npm install
         env:
           CI: true
+      - name: install rules
+        run: |
+          npm install eslint
+          npm install eslint-plugin-import
+          npm install eslint-config-airbnb-base
       - name: Run linter
         run: |
           make lint
