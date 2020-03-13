@@ -17,10 +17,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build
+      - name: npm install
         run: |
           npm install
-          make build
         env:
           CI: true
       - name: Run linter
@@ -30,4 +29,3 @@ jobs:
         uses: paambaati/codeclimate-action@v2.4.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-  
