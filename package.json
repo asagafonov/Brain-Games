@@ -5,35 +5,14 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "console.log(\"Welcome to the Brain Games!\")",
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "prettier": "prettier --write src/* test/* example/*",
-    "tslint": "tslint -p tslint -p tsconfig.json",
-    "codestyle": "npm run prettier && npm run tslint",
-    "docsify": "docsify serve ./docs",
-    "typedoc": "typedoc --out ./docs/api ./src --mode file --readme docs/README.md",
-    "docs": "npm run typedoc && npm run docsify"
+    "test": "console.log(\"Welcome to the Brain Games!\")"
   },
-  "devDependencies": {
+  "dependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
     "readline-sync": "^1.4.10"
   },
-  "devDependencies": {
-   "@types/jest": "^24.0.18",
-   "@types/node": "^12.7.5",
-   "docsify-cli": "^4.3.0",
-   "husky": "^3.0.5",
-   "jest": "^24.9.0",
-   "prettier": "^1.18.2",
-   "ts-jest": "^24.0.2",
-   "tslint": "^5.20.0",
-   "tslint-config-prettier": "^1.18.0",
-   "typedoc": "^0.15.0",
-   "typescript": "^3.6.3"
- },
   "bin": {
     "brain-games": "src/bin/brain-games.js"
   },
