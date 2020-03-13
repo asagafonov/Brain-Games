@@ -26,5 +26,6 @@ jobs:
           github_token: ${{ secrets.github_token }}
           # Enable linters
           eslint: true
+          prettier: true
           eslint_dir: node-modules/
-          auto-fix: true
+          auto_fix: true
