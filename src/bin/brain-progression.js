@@ -19,7 +19,7 @@ const generateProgressionOfTen = () => {
 };
 
 const hideDigit = (arr) => {
-  const array = [...arr];
+  let array = [...arr];
   const hiddenDigitIndex = generateRandomNumberInRange(0, 10);
   array[hiddenDigitIndex] = '..';
   return array;

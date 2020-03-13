@@ -1,4 +1,4 @@
-import askForName from './bin/ask-for-name.js';
+import askForName from './ask-for-name.js';
 
 const brainGames = () => {
   const name = askForName;
