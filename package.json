@@ -14,7 +14,7 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "brain-games": "src/bin/brain-games.js"
+    "brain-games": "src/games/brain-games.js"
   },
   "repository": {
     "type": "git",
