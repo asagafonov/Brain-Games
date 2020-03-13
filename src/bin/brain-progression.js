@@ -19,7 +19,7 @@ const generateProgressionOfTen = () => {
 };
 
 const hideDigit = (arr) => {
-  let array = arr;
+  let array = [...arr];
   const hiddenDigitIndex = generateRandomNumberInRange(0, 10);
   array[hiddenDigitIndex] = '..';
   return array;
@@ -31,7 +31,8 @@ const brainProgression = () => {
   while (iteration < 3) {
     const progression = generateProgressionOfTen();
     const hiddenProgression = hideDigit(progression);
-    const answer = readlineSync.question(`Question: ${hiddenProgression} `);
+    const hiddenProgressionToString = hiddenProgression.join(' ');
+    const answer = readlineSync.question(`Question: ${hiddenProgressionToString} `);
     const correctAnswer = progression[hiddenProgression.indexOf('..')];
     if (Number(answer) === correctAnswer) {
       iteration += 1;
