@@ -1,24 +1,13 @@
-name: Lint
+name: Example Workflow
 
 on: [pull_request, push]
 
 jobs:
-  eslint:
-    runs-on: ubuntu-latest
+  lint:
     steps:
       - uses: actions/checkout@v1
+      - uses: a-b-r-o-w-n/eslint-action@v1
         with:
-          fetch-depth: 1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci --no-audit --prefer-offline
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-          HUSKY_SKIP_INSTALL: true
-      # Alternative: if you use npm instead of yarn
-      # - run: npm ci --no-audit --prefer-offline
-      - uses: tinovyatkin/action-eslint@v1.1.0
-        with:
-          repo-token: ${{secrets.GITHUB_TOKEN}}
-          check-name: eslint # this is the check name from above 👆 where to post annotations
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          files: "src/**/*"
+          extensions: ".js,.ts"
