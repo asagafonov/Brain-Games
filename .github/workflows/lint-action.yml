@@ -20,6 +20,9 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install
 
+      - name: Install ESling
+        run: npm install eslint
+
 
       - name: Run linter
         uses: samuelmeuli/lint-action@v1.2.0
