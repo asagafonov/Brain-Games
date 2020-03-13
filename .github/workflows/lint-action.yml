@@ -27,5 +27,5 @@ jobs:
           # Enable linters
           eslint: true
           prettier: true
-          eslint_dir: node-modules/
+          eslint_dir: node-modules/eslint/
           auto_fix: true
