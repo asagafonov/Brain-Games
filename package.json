@@ -14,12 +14,12 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "brain-games": "./brain-games.js",
-    "brain-even": "./brain-even.js",
-    "brain-prime": "./brain-prime.js",
-    "brain-progression": "./brain-progression.js",
-    "brain-gcd": "./brain-gcd.js",
-    "brain-calc": "./brain-calc.js"
+    "brain-games": "src/games/brain-games.js",
+    "brain-even": "src/games/brain-even.js",
+    "brain-prime": "src/games/brain-prime.js",
+    "brain-progression": "src/games/brain-progression.js",
+    "brain-gcd": "src/games/brain-gcd.js",
+    "brain-calc": "src/games/brain-calc.js"
   },
   "repository": {
     "type": "git",
@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/asagafonov/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/asagafonov/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/asagafonov/frontend-project-lvl1#readme",
+  "devDependencies": {}
 }
