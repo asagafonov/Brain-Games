@@ -9,12 +9,17 @@
   },
   "dependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "brain-games": "src/games/brain-games.js"
+    "brain-games": "./brain-games.js",
+    "brain-even": "./brain-even.js",
+    "brain-prime": "./brain-prime.js",
+    "brain-progression": "./brain-progression.js",
+    "brain-gcd": "./brain-gcd.js",
+    "brain-calc": "./brain-calc.js"
   },
   "repository": {
     "type": "git",
