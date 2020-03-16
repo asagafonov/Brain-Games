@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import {greetUser, generateRandomNumberInRange, generateOperator, generateEquation, solveEquation} from './index.js';
+import {greetUser, askForName, sayHello, generateRandomNumberInRange, generateOperator, generateEquation, solveEquation, launchBrainGame} from '../index.js';
 
 const brainCalc = () => {
   console.log('What is the result of the following expression?');
@@ -15,11 +15,12 @@ const brainCalc = () => {
         console.log(`Congratulations, ${askForName}! You win!`);
       }
     } else {
-      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solveEquation(equation)} \nLet's try it again, ${askForName}!`);
+      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solveEquation(equation)} \nLet's try it again, ${greetUser()}!`);
       break;
     }
   }
 };
 
-greetUser()
+greetUser;
+sayHello(askForName);
 brainCalc();

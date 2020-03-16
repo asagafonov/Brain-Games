@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import {greetUser, intro} from './index.js';
+import readlineSync from 'readline-sync';
+import {greetUser, askForName, sayHello, explainRules} from '../index.js';
 
-greetUser();
+greetUser;
+sayHello(askForName);
 explainRules();

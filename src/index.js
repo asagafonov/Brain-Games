@@ -1,14 +1,12 @@
+import readlineSync from 'readline-sync';
+
 //Functions of general use
-const greetUser = () => {
-  const greet = console.log('Welcome to the Brain Games!');
-  const askForName = readlineSync.question('May I have your name? ');
-  const name = askForName;
-  const greetUser = `Hello, ${name}!`;
-  console.log(greetUser);
-};
+const greetUser = console.log(`\nWelcome to the Brain Games!`);
+const askForName = readlineSync.question('\nMay I have your name? ');
+const sayHello = (name) => console.log(`Hello, ${name}!\n`);
 
 const explainRules = () => {
-  console.log(`There are 5 games available for you to play. \nGive the correct answer 3 times in a row to win.\n1. Type "brain-calc" to test your basic math skills\n2. Type "brain-even" to play the odd/even game\n3. Type "brain-gcd" to find the greatest common divisor\n4. Type "brain-progression" to guess the missing number in a progression\nAnd finally 5. type "brain-prime" to guess whether the given number is prime\nHave fun!`);
+  console.log(`There are 5 games available in the Brain Games bundle. \nThe rules are simple: answer 3 questions in a row to win.\n\n1. Type "brain-calc" to test your basic math skills\n2. Type "brain-even" to play the odd/even game\n3. Type "brain-gcd" to find the greatest common divisor\n4. Type "brain-progression" to guess the missing number in a progression\n5. Type "brain-prime" to guess whether the given number is prime\n\nHave fun!\n`);
 };
 
 const generateRandomNumberInRange = (min, max) => {
@@ -16,7 +14,6 @@ const generateRandomNumberInRange = (min, max) => {
   const maxValue = Math.floor(max);
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 };
-
 
 const launchBrainGame = (task, equation, solution) => {
   console.log(task);
@@ -27,10 +24,10 @@ const launchBrainGame = (task, equation, solution) => {
       iteration += 1;
       console.log(`Your answer is ${userAnswer} \nCorrect!`);
       if (iteration === 3) {
-        console.log(`Congratulations, ${askForName}! You win!`);
+        console.log(`Congratulations, ${askForName}! You win!\n`);
       }
     } else {
-      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solution} \nLet's try it again, ${askForName}!`);
+      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solution} \nLet's try it again, ${askForName}!\n`);
       break;
     }
   }
@@ -171,3 +168,5 @@ const askWhetherIsEven = () => {
   }
   return false;
 };
+
+export {greetUser, askForName, sayHello, explainRules, generateRandomNumberInRange, launchBrainGame, generateOperator, generateEquation, solveEquation, isNumberPrime, askWhetherIsPrime, generateProgressionOfTen, hideDigit, getTwoNumbers, getAnswer, askWhetherIsEven};
