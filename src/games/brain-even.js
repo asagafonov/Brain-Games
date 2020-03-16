@@ -1,32 +1,6 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import askForName from './ask-for-name.js';
-
-const generateRandomNumberInRange = (min, max) => {
-  const minValue = Math.ceil(min);
-  const maxValue = Math.floor(max);
-  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
-};
-
-const askWhetherIsEven = () => {
-  const randomNumber = generateRandomNumberInRange(1, 100);
-  if (randomNumber % 2 === 0) {
-    if (readlineSync.keyInYN(`Question: is ${randomNumber} even?`)) {
-      console.log('Your answer is "yes" \nCorrect!');
-      return true;
-    }
-    console.log(`Your answer is "no" \n"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
-    return false;
-  }
-  if (randomNumber % 2 !== 0) {
-    if (readlineSync.keyInYN(`Question: is ${randomNumber} even?`)) {
-      console.log(`Your answer is "yes" \n"yes" is the wrong answer ;(. Correct answer was "no" \nLet's try it again, ${askForName}!`);
-      return false;
-    }
-    console.log('Your answer is "no" \nCorrect!');
-    return true;
-  }
-  return false;
-};
+import {greetUser, generateRandomNumberInRange, askWhetherIsEven} from './index.js';
 
 const brainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -44,4 +18,5 @@ const brainEven = () => {
   }
 };
 
-export default brainEven;
+greetUser();
+brainEven();

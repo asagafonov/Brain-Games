@@ -1,29 +1,6 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import askForName from './ask-for-name.js';
-
-const generateRandomNumberInRange = (min, max) => {
-  const minValue = Math.ceil(min);
-  const maxValue = Math.floor(max);
-  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
-};
-
-const generateProgressionOfTen = () => {
-  const array = [];
-  const starter = generateRandomNumberInRange(1, 100);
-  const difference = generateRandomNumberInRange(1, 11);
-  const maximum = starter + (difference * 10);
-  for (let i = starter; i < maximum; i += difference) {
-    array.push(i);
-  }
-  return array;
-};
-
-const hideDigit = (arr) => {
-  const array = [...arr];
-  const hiddenDigitIndex = generateRandomNumberInRange(0, 10);
-  array[hiddenDigitIndex] = '..';
-  return array;
-};
+import {greetUser, generateRandomNumberInRange, generateProgressionOfTen, hideDigit} from './index.js';
 
 const brainProgression = () => {
   console.log('What number is missing in the progression?');
@@ -32,19 +9,20 @@ const brainProgression = () => {
     const progression = generateProgressionOfTen();
     const hiddenProgression = hideDigit(progression);
     const hiddenProgressionToString = hiddenProgression.join(' ');
-    const answer = readlineSync.question(`Question: ${hiddenProgressionToString} `);
+    const userAnswer = readlineSync.question(`Question: ${hiddenProgressionToString} `);
     const correctAnswer = progression[hiddenProgression.indexOf('..')];
-    if (Number(answer) === correctAnswer) {
+    if (Number(userAnswer) === correctAnswer) {
       iteration += 1;
-      console.log(`Your answer is ${answer} \nCorrect!`);
+      console.log(`Your answer is ${userAnswer} \nCorrect!`);
       if (iteration === 3) {
         console.log(`Congratulations, ${askForName}! You win!`);
       }
     } else {
-      console.log(`Your answer is ${answer} \n${answer} is the wrong answer ;(. Correct answer was ${correctAnswer} \nLet's try it again, ${askForName}!`);
+      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${correctAnswer} \nLet's try it again, ${askForName}!`);
       break;
     }
   }
 };
 
-export default brainProgression;
+greetUser();
+brainProgression();
