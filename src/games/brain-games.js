@@ -2,4 +2,4 @@
 import {greetUser, intro} from './index.js';
 
 greetUser();
-intro();
+explainRules();

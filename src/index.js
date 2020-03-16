@@ -7,14 +7,33 @@ const greetUser = () => {
   console.log(greetUser);
 };
 
-const intro = () => {
-  console.log(`There are 5 games available for you to play. \nGive the correct answer 3 times in a row to win.\n1. Type "brain-calc" to test your basic math skills\n2. Type "brain-even" to play the even/odd game\n3. Type "brain-gcd" to find the greatest common divisor\n4. Type "brain-progression" to guess the missing number in a progression\nAnd finally 5. type "brain-prime" to guess whether the given number is prime\nHave fun!`);
+const explainRules = () => {
+  console.log(`There are 5 games available for you to play. \nGive the correct answer 3 times in a row to win.\n1. Type "brain-calc" to test your basic math skills\n2. Type "brain-even" to play the odd/even game\n3. Type "brain-gcd" to find the greatest common divisor\n4. Type "brain-progression" to guess the missing number in a progression\nAnd finally 5. type "brain-prime" to guess whether the given number is prime\nHave fun!`);
 };
 
 const generateRandomNumberInRange = (min, max) => {
   const minValue = Math.ceil(min);
   const maxValue = Math.floor(max);
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
+};
+
+
+const launchBrainGame = (task, equation, solution) => {
+  console.log(task);
+  let iteration = 0;
+  while (iteration < 3) {
+    const userAnswer = readlineSync.question(`Question: ${equation} `);
+    if (userAnswer === solution) {
+      iteration += 1;
+      console.log(`Your answer is ${userAnswer} \nCorrect!`);
+      if (iteration === 3) {
+        console.log(`Congratulations, ${askForName}! You win!`);
+      }
+    } else {
+      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solution} \nLet's try it again, ${askForName}!`);
+      break;
+    }
+  }
 };
 
 //brain-calc.js
