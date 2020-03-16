@@ -15,7 +15,7 @@ const brainCalc = () => {
         console.log(`Congratulations, ${askForName}! You win!`);
       }
     } else {
-      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solveEquation(equation)} \nLet's try it again, ${greetUser()}!`);
+      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solveEquation(equation)} \nLet's try it again, ${askForName}!`);
       break;
     }
   }
