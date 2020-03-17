@@ -42,7 +42,9 @@ const brainEven = () => {
 
 brainEven();
 
-/* Какое-то решение нашлось ниже */
+/* Какое-то решение нашлось ниже
+хм, а если назвать функции одинаково, но экспортировать в нужный файл нужные?*/
+
 
 const launchBrainGame = (rules, equation, solution) => {
   console.log(rules);
