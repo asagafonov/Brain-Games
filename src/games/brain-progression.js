@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import {greetUser, sayHello, askForName, generateRandomNumberInRange, generateProgressionOfTen, hideDigit, launchBrainGame} from '../index.js';
+import {
+  greetUser, sayHello, askForName, generateProgressionOfTen, hideDigit, launchBrainGame,
+} from '../index.js';
 
 const brainProgression = () => {
   console.log('What number is missing in the progression?');

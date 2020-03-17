@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import {greetUser, sayHello, askForName, generateRandomNumberInRange, isNumberPrime, askWhetherIsPrime, launchBrainGame} from '../index.js';
+import {
+  greetUser, sayHello, askForName, askWhetherIsPrime, launchBrainGame,
+} from '../index.js';
 
 const brainPrime = () => {
   console.log('Answer "yes" if the given number is prime. Otherwise answer "no".');

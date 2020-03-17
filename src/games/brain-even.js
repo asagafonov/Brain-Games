@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import {greetUser, askForName, sayHello, generateRandomNumberInRange, askWhetherIsEven, launchBrainGame} from '../index.js';
+import {
+  greetUser, askForName, sayHello, askWhetherIsEven, launchBrainGame,
+} from '../index.js';
 
 const brainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');

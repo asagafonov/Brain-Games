@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import {greetUser, askForName, sayHello, generateRandomNumberInRange, generateOperator, generateEquation, solveEquation, launchBrainGame} from '../index.js';
+import {
+  greetUser, askForName, sayHello, generateEquation, solveEquation, launchBrainGame,
+} from '../index.js';
 
 const brainCalc = () => {
   console.log('What is the result of the following expression?');

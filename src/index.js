@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 
-//Functions of general use
-const greetUser = console.log(`\nWelcome to the Brain Games!`);
+/* Functions of general use */
+const greetUser = console.log('\nWelcome to the Brain Games!');
 const askForName = readlineSync.question('\nMay I have your name? ');
 const sayHello = (name) => console.log(`Hello, ${name}!\n`);
 
 const explainRules = () => {
-  console.log(`There are 5 games available in the Brain Games bundle. \nThe rules are simple: answer 3 questions in a row to win.\n\n1. Type "brain-calc" to test your basic math skills\n2. Type "brain-even" to play the odd/even game\n3. Type "brain-gcd" to find the greatest common divisor\n4. Type "brain-progression" to guess the missing number in a progression\n5. Type "brain-prime" to guess whether the given number is prime\n\nHave fun!\n`);
+  console.log('There are 5 games available in the Brain Games bundle. \nThe rules are simple: answer 3 questions in a row to win.\n\n1. Type "brain-calc" to test your basic math skills\n2. Type "brain-even" to play the odd/even game\n3. Type "brain-gcd" to find the greatest common divisor\n4. Type "brain-progression" to guess the missing number in a progression\n5. Type "brain-prime" to guess whether the given number is prime\n\nHave fun!\n');
 };
 
 const generateRandomNumberInRange = (min, max) => {
@@ -33,7 +33,7 @@ const launchBrainGame = (task, equation, solution) => {
   }
 };
 
-//brain-calc.js
+/* brain-calc.js */
 
 const generateOperator = () => {
   const operatorIndex = () => generateRandomNumberInRange(1, 4);
@@ -67,7 +67,7 @@ const solveEquation = (string) => {
   return firstOperand * secondOperand;
 };
 
-//brain-prime.js
+/* brain-prime.js */
 
 const isNumberPrime = (num) => {
   const array = [];
@@ -100,7 +100,7 @@ const askWhetherIsPrime = () => {
   return false;
 };
 
-//brain-progression.js
+/* brain-progression.js */
 
 const generateProgressionOfTen = () => {
   const array = [];
@@ -120,7 +120,7 @@ const hideDigit = (arr) => {
   return array;
 };
 
-//brain-gcd.js
+/* brain-gcd.js */
 
 const getTwoNumbers = () => {
   const firstNumber = generateRandomNumberInRange(1, 100);
@@ -146,7 +146,7 @@ const getAnswer = (string) => {
   return result;
 };
 
-//brain-even.js
+/* brain-even.js */
 
 const askWhetherIsEven = () => {
   const randomNumber = generateRandomNumberInRange(1, 100);
@@ -169,4 +169,18 @@ const askWhetherIsEven = () => {
   return false;
 };
 
-export {greetUser, askForName, sayHello, explainRules, generateRandomNumberInRange, launchBrainGame, generateOperator, generateEquation, solveEquation, isNumberPrime, askWhetherIsPrime, generateProgressionOfTen, hideDigit, getTwoNumbers, getAnswer, askWhetherIsEven};
+export {
+  greetUser, askForName, sayHello, explainRules,
+};
+
+export {
+  generateRandomNumberInRange, launchBrainGame, generateOperator, generateEquation,
+};
+
+export {
+  solveEquation, isNumberPrime, askWhetherIsPrime, generateProgressionOfTen,
+};
+
+export {
+  hideDigit, getTwoNumbers, getAnswer, askWhetherIsEven,
+};

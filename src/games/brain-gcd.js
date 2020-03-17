@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import {greetUser, askForName, sayHello, generateRandomNumberInRange, getTwoNumbers, getAnswer, launchBrainGame} from '../index.js';
+import {
+  greetUser, askForName, sayHello, getTwoNumbers, getAnswer, launchBrainGame,
+} from '../index.js';
 
 const brainGCD = () => {
   console.log('Find the greatest common divisor of given numbers.');
