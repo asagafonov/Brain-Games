@@ -41,3 +41,27 @@ const brainEven = () => {
 };
 
 brainEven();
+
+/* Какое-то решение нашлось ниже */
+
+const launchBrainGame = (rules, equation, solution) => {
+  console.log(rules);
+  let iteration = 0;
+  while (iteration < 3) {
+    const userAnswer = readlineSync.question(`Question: ${equation} `);
+    if (userAnswer === solution) {
+      iteration += 1;
+      console.log(`Your answer is ${userAnswer} \nCorrect!`);
+      equation = generateEquation();
+      solution = findSolution(equation);
+      if (iteration === 3) {
+        console.log(`Congratulations, ${askForName}! You win!\n`);
+      }
+    } else {
+      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solution} \nLet's try it again, ${askForName}!\n`);
+      break;
+    }
+  }
+};
+
+launchBrainGame('play', eq, findSolution(eq));
