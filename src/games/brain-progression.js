@@ -1,15 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
-  greetUser, sayHello, askForName, generateProgressionOfTen, hideDigit, hiddenValue, launchBrainGame,
+  greetUser, sayHello, askForName, generateProgressionOfTen, hideDigit,
 } from '../index.js';
 
-const progression = generateProgressionOfTen();
-const hiddenProgression = hideDigit(progression);
-const generateEquation = hiddenProgression.join(' ');
-const findSolution = hiddenValue(progression);
-
-/*
 const brainProgression = () => {
   console.log('What number is missing in the progression?');
   let iteration = 0;
@@ -31,8 +25,7 @@ const brainProgression = () => {
     }
   }
 };
-*/
 
 greetUser;
 sayHello(askForName);
-launchBrainGame('What number is missing in the progression?');
+brainProgression();
