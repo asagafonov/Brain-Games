@@ -68,7 +68,7 @@ const returnPrimeOrNot = (num) => {
     return 'yes';
   }
   return 'no';
-}
+};
 
 /* brain-progression.js */
 

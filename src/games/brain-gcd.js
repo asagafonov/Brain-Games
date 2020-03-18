@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
-  greetUser, askForName, sayHello, getTwoNumbers as generateEquation, getAnswer as findSolution,
+  greetUser,
+  askForName,
+  sayHello,
+  getTwoNumbers as generateEquation,
+  getAnswer as findSolution,
 } from '../index.js';
 
 const launchBrainGame = (rules, equation = generateEquation(), solution = findSolution(equation)) => {
