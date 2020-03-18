@@ -15,14 +15,16 @@ const generateRandomNumberInRange = (min, max) => {
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 };
 
-const launchBrainGame = (task, equation, solution) => {
-  console.log(task);
+const launchBrainGame = (rules, equation = generateEquation(), solution = findSolution(equation)) => {
+  console.log(rules);
   let iteration = 0;
   while (iteration < 3) {
     const userAnswer = readlineSync.question(`Question: ${equation} `);
     if (userAnswer === solution) {
       iteration += 1;
       console.log(`Your answer is ${userAnswer} \nCorrect!`);
+      equation = generateEquation();
+      solution = findSolution(equation);
       if (iteration === 3) {
         console.log(`Congratulations, ${askForName}! You win!\n`);
       }
@@ -32,6 +34,7 @@ const launchBrainGame = (task, equation, solution) => {
     }
   }
 };
+
 
 /* brain-calc.js */
 
@@ -46,7 +49,7 @@ const generateOperator = () => {
   return '*';
 };
 
-const generateEquation = () => {
+const generateRandomEquation = () => {
   const firstOperand = generateRandomNumberInRange(1, 100);
   const secondOperand = generateRandomNumberInRange(1, 100);
   const operator = generateOperator();
@@ -79,26 +82,13 @@ const isNumberPrime = (num) => {
   return array.length === 2;
 };
 
-const askWhetherIsPrime = () => {
-  const randomNumber = generateRandomNumberInRange(1, 100);
-  if (isNumberPrime(randomNumber)) {
-    if (readlineSync.keyInYN(`Is the number ${randomNumber} prime?`)) {
-      console.log('Your answer is "yes" \nCorrect!');
-      return true;
-    }
-    console.log(`Your answer is "no" \n"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
-    return false;
+const returnPrimeOrNot = (num) => {
+  const equation = num;
+  if (isNumberPrime(equation)) {
+    return 'yes';
   }
-  if (!isNumberPrime(randomNumber)) {
-    if (readlineSync.keyInYN(`Is the number ${randomNumber} prime?`)) {
-      console.log(`Your answer is "yes" \n"yes" is the wrong answer ;(. Correct answer was "no" \nLet's try it again, ${askForName}!`);
-      return false;
-    }
-    console.log('Your answer is "no" \nCorrect!');
-    return true;
-  }
-  return false;
-};
+  return 'no';
+}
 
 /* brain-progression.js */
 
@@ -119,6 +109,11 @@ const hideDigit = (arr) => {
   array[hiddenDigitIndex] = '..';
   return array;
 };
+
+const hiddenValue = (array) => {
+  const solution = array[hideDigit(array.indexOf('..')];
+  return solution;
+}
 
 /* brain-gcd.js */
 
@@ -143,31 +138,24 @@ const getAnswer = (string) => {
       break;
     }
   }
-  return result;
+  return String(result);
 };
 
 /* brain-even.js */
 
-const askWhetherIsEven = () => {
-  const randomNumber = generateRandomNumberInRange(1, 100);
-  if (randomNumber % 2 === 0) {
-    if (readlineSync.keyInYN(`Question: is ${randomNumber} even?`)) {
-      console.log('Your answer is "yes" \nCorrect!');
-      return true;
-    }
-    console.log(`Your answer is "no" \n"no" is the wrong answer ;(. Correct answer was "yes" \nLet's try it again, ${askForName}!`);
-    return false;
+const generateNumber = () => generateRandomNumberInRange(1, 100);
+
+const isEven = (eq) => {
+  const equation = eq;
+  if (equation % 2 === 0) {
+    return 'yes';
   }
-  if (randomNumber % 2 !== 0) {
-    if (readlineSync.keyInYN(`Question: is ${randomNumber} even?`)) {
-      console.log(`Your answer is "yes" \n"yes" is the wrong answer ;(. Correct answer was "no" \nLet's try it again, ${askForName}!`);
-      return false;
-    }
-    console.log('Your answer is "no" \nCorrect!');
-    return true;
-  }
-  return false;
+  return 'no';
 };
+
+
+/* exports */
+
 
 export {
   greetUser, askForName, sayHello, explainRules,
@@ -178,9 +166,9 @@ export {
 };
 
 export {
-  solveEquation, isNumberPrime, askWhetherIsPrime, generateProgressionOfTen,
+  solveEquation, isNumberPrime, askWhetherIsPrime, generateProgressionOfTen, hiddenValue,
 };
 
 export {
-  hideDigit, getTwoNumbers, getAnswer, askWhetherIsEven,
+  hideDigit, getTwoNumbers, getAnswer, isEven, generateNumber,
 };
