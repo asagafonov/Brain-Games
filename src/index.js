@@ -117,21 +117,6 @@ const getAnswer = (string) => {
   return String(result);
 };
 
-/* brain-even.js */
-
-const generateNumber = () => generateRandomNumberInRange(1, 100);
-
-const isEven = (eq) => {
-  const equation = eq;
-  if (equation % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
-
-
-/* exports */
-
 
 export {
   greetUser,
