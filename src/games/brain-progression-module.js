@@ -1,3 +1,5 @@
+import launchBrainGame from '../index.js';
+
 const generateRandomNumberInRange = (min, max) => {
   const minValue = Math.ceil(min);
   const maxValue = Math.floor(max);
@@ -31,3 +33,8 @@ const userAnswer = readlineSync.question(`Question: ${hiddenProgressionToString}
 const correctAnswer = progression[hiddenProgression.indexOf('..')];
 
 */
+
+const equation = 
+const solution =
+
+export default brainCalc = launchBrainGame('rules', equation, solution);

@@ -1,3 +1,5 @@
+import launchBrainGame from '../index.js';
+
 const generateRandomNumberInRange = (min, max) => {
   const minValue = Math.ceil(min);
   const maxValue = Math.floor(max);
@@ -23,3 +25,8 @@ const returnPrimeOrNot = (num) => {
   }
   return 'no';
 };
+
+const equation = randomNumber;
+const solution = returnPrimeOrNot(equation);
+
+export default brainCalc = launchBrainGame('rules', equation, solution);
