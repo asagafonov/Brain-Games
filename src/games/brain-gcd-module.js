@@ -30,7 +30,19 @@ const getAnswer = (string) => {
   return String(result);
 };
 
-const equation = getTwoNumbers();
-const solution = getAnswer(equation);
+const createArray = (limit) => {
+  const array = [];
+  let iteration = 0;
+  while (iteration < limit) {
+    let equation = getTwoNumbers();
+    let solution = getAnswer(equation);
+    array.push([equation, solution]);
+    iteration += 1;
+  }
+  return array;
+};
 
-export default brainCalc = launchBrainGame('rules', equation, solution);
+const rules = 'Find the greatest common divisor of the given numbers.'
+const array = createArray(3);
+
+export default brainGCD = runEngine(rules, array);

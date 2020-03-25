@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import {
-  generateNumber as generateEquation,
-  isEven as findSolution,
-} from '../index.js';
+import brainEven from './brain-even-module.js'
 
-launchBrainGame();
+brainEven;

@@ -26,7 +26,19 @@ const returnPrimeOrNot = (num) => {
   return 'no';
 };
 
-const equation = randomNumber;
-const solution = returnPrimeOrNot(equation);
+const createArray = (limit) => {
+  const array = [];
+  let iteration = 0;
+  while (iteration < limit) {
+    let equation = randomNumber;
+    let solution = returnPrimeOrNot(equation);
+    array.push([equation, solution]);
+    iteration += 1;
+  }
+  return array;
+};
 
-export default brainCalc = launchBrainGame('rules', equation, solution);
+const rules = 'Answer "yes" if the given number is prime. Otherwise answer "no".'
+const array = createArray(3);
+
+export default brainPrime = runEngine(rules, array);

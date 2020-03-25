@@ -38,7 +38,19 @@ const solveEquation = (string) => {
   return String(firstOperand * secondOperand);
 };
 
-const equation = generateRandomEquation();
-const solution = solveEquation(equation);
+const createArray = (limit) => {
+  const array = [];
+  let iteration = 0;
+  while (iteration < limit) {
+    let equation = generateRandomEquation();
+    let solution = solveEquation(equation);
+    array.push([equation, solution]);
+    iteration += 1;
+  }
+  return array;
+};
 
-export default brainCalc = runEngine('rules', arr);
+const rules = 'What is the result of the following expression?'
+const array = createArray(3);
+
+export default brainCalc = runEngine(rules, array);

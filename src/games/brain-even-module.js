@@ -15,7 +15,19 @@ const isEven = (num) => {
   return 'no';
 };
 
-const equation = randomNumber;
-const solution = isEven(equation);
+const createArray = (limit) => {
+  const array = [];
+  let iteration = 0;
+  while (iteration < limit) {
+    let equation = randomNumber;
+    let solution = isEven(equation);
+    array.push([equation, solution]);
+    iteration += 1;
+  }
+  return array;
+};
 
-export default brainCalc = launchBrainGame('rules', equation, solution);
+const rules = 'Answer "yes" if the given number is even, otherwise answer "no".'
+const array = createArray(3);
+
+export default brainEven = runEngine(rules, array);

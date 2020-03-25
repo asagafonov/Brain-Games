@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import {
+import brainGCD from './brain-gcd-module.js'
 
-  getTwoNumbers as generateEquation,
-  getAnswer as findSolution,
-} from '../index.js';
-
-launchBrainGame();
+brainGCD;

@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import {
-  generateProgressionOfTen, hideDigit,
-} from '../index.js';
+import brainProgression from './brain-progression-module.js'
 
-brainProgression();
+brainProgression;

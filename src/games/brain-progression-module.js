@@ -24,17 +24,21 @@ const hideDigit = (arr) => {
   return array;
 };
 
-/*
+const createArray = (limit) => {
+  const array = [];
+  let iteration = 0;
+  while (iteration < limit) {
+    const progression = generateProgressionOfTen();
+    const hiddenProgression = hideDigit(progression);
+    const hiddenProgressionToString = hiddenProgression.join(' ');
+    const correctAnswer = String(progression[hiddenProgression.indexOf('..')]);
+    array.push([hiddenProgressionToString, correctAnswer]);
+    iteration += 1;
+  }
+  return array;
+};
 
-const progression = generateProgressionOfTen();
-const hiddenProgression = hideDigit(progression);
-const hiddenProgressionToString = hiddenProgression.join(' ');
-const userAnswer = readlineSync.question(`Question: ${hiddenProgressionToString} `);
-const correctAnswer = progression[hiddenProgression.indexOf('..')];
+const rules = 'What number is missing in the progression?'
+const array = createArray(3);
 
-*/
-
-const equation =
-const solution =
-
-export default brainCalc = launchBrainGame('rules', equation, solution);
+export default brainProgression = runEngine(rules, array);
