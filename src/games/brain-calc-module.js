@@ -42,16 +42,16 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    let equation = generateRandomEquation();
-    let solution = solveEquation(equation);
+    const equation = generateRandomEquation();
+    const solution = solveEquation(equation);
     array.push([equation, solution]);
     iteration += 1;
   }
   return array;
 };
 
-const rules = 'What is the result of the following expression?'
+const rules = 'What is the result of the following expression?';
 const array = createArray(3);
 
-const brainCalc = runEngine(rules, array);
-export default brainCalc ;
+const brainCalc = () => runEngine(rules, array);
+export default brainCalc;

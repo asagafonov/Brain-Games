@@ -30,16 +30,16 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    let equation = randomNumber();
-    let solution = returnPrimeOrNot(equation);
+    const equation = randomNumber();
+    const solution = returnPrimeOrNot(equation);
     array.push([equation, solution]);
     iteration += 1;
   }
   return array;
 };
 
-const rules = 'Answer "yes" if the given number is prime. Otherwise answer "no".'
+const rules = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
 const array = createArray(3);
 
-const brainPrime = runEngine(rules, array);
+const brainPrime = () => runEngine(rules, array);
 export default brainPrime;

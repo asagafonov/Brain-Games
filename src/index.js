@@ -10,24 +10,24 @@ const runEngine = (rules, arr) => {
   sayHello(askForName);
   console.log(rules);
   const array = [...arr];
-  const length = array.length;
-  for (let i = 0; i < length; i += 1) {
+  for (let i = 0; i < array.length; i += 1) {
     const equation = array[i][0];
     const solution = array[i][1];
     const userAnswer = readlineSync.question(`Question: ${equation} `);
     if (userAnswer === solution) {
       console.log(`Your answer is "${userAnswer}" \nCorrect!`);
-      if (i === length - 1) {
+      if (i === array.length - 1) {
         return console.log(`Congratulations, ${askForName}! You win!\n`);
       }
     } else {
       return console.log(`Your answer is "${userAnswer}" \n"${userAnswer}" is the wrong answer ;(. Correct answer was "${solution}" \nLet's try it again, ${askForName}!\n`);
     }
   }
+  return console.log(`Congratulations, ${askForName}! You win!\n`);
 };
 
 export default runEngine;
 
 export {
   greetUser, askForName, sayHello,
-}
+};

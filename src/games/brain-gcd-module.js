@@ -34,16 +34,16 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    let equation = getTwoNumbers();
-    let solution = getAnswer(equation);
+    const equation = getTwoNumbers();
+    const solution = getAnswer(equation);
     array.push([equation, solution]);
     iteration += 1;
   }
   return array;
 };
 
-const rules = 'Find the greatest common divisor of the given numbers.'
+const rules = 'Find the greatest common divisor of the given numbers.';
 const array = createArray(3);
 
-const brainGCD = runEngine(rules, array);
-export default brainGCD ;
+const brainGCD = () => runEngine(rules, array);
+export default brainGCD;
