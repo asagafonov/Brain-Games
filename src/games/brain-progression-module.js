@@ -1,4 +1,4 @@
-import launchBrainGame from '../index.js';
+import runEngine from '../index.js';
 
 const generateRandomNumberInRange = (min, max) => {
   const minValue = Math.ceil(min);
@@ -34,7 +34,7 @@ const correctAnswer = progression[hiddenProgression.indexOf('..')];
 
 */
 
-const equation = 
+const equation =
 const solution =
 
 export default brainCalc = launchBrainGame('rules', equation, solution);

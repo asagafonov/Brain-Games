@@ -4,27 +4,24 @@ const greetUser = console.log('\nWelcome to the Brain Games!');
 const askForName = readlineSync.question('May I have your name? ');
 const sayHello = (name) => console.log(`Hello, ${name}!`);
 
-const launchBrainGame = (rules, equation, solution) => {
+export default runEngine = (rules, arr) => {
   greetUser;
   askForName;
   sayHello(askForName);
   console.log(rules);
-  let iteration = 0;
-  while (iteration < 3) {
+  const array = [...arr];
+  const length = array.length;
+  for (let i = 0; i < length; i += 1) {
+    const equation = array[i][0];
+    const solution = array[i][1];
     const userAnswer = readlineSync.question(`Question: ${equation} `);
     if (userAnswer === solution) {
-      iteration += 1;
-      console.log(`Your answer is ${userAnswer} \nCorrect!`);
-      if (iteration === 3) {
-        console.log(`Congratulations, ${askForName}! You win!\n`);
+      console.log(`Your answer is "${userAnswer}" \nCorrect!`);
+      if (i === length - 1) {
+        return console.log(`Congratulations, ${askForName}! You win!\n`);
       }
     } else {
-      console.log(`Your answer is ${userAnswer} \n${userAnswer} is the wrong answer ;(. Correct answer was ${solution} \nLet's try it again, ${askForName}!\n`);
-      break;
+      return console.log(`Your answer is "${userAnswer}" \n"${userAnswer}" is the wrong answer ;(. Correct answer was "${solution}" \nLet's try it again, ${askForName}!\n`);
     }
   }
-};
-
-export {
-  launchBrainGame,
 };

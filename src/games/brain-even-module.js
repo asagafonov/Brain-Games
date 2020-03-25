@@ -1,4 +1,4 @@
-import launchBrainGame from '../index.js';
+import runEngine from '../index.js';
 
 const generateRandomNumberInRange = (min, max) => {
   const minValue = Math.ceil(min);
