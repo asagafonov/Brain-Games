@@ -4,7 +4,7 @@ const greetUser = console.log('\nWelcome to the Brain Games!');
 const askForName = readlineSync.question('May I have your name? ');
 const sayHello = (name) => console.log(`Hello, ${name}!`);
 
-export default runEngine = (rules, arr) => {
+const runEngine = (rules, arr) => {
   greetUser;
   askForName;
   sayHello(askForName);
@@ -25,3 +25,9 @@ export default runEngine = (rules, arr) => {
     }
   }
 };
+
+export default runEngine;
+
+export {
+  greetUser, askForName, sayHello,
+}

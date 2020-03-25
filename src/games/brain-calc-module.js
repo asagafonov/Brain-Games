@@ -53,4 +53,5 @@ const createArray = (limit) => {
 const rules = 'What is the result of the following expression?'
 const array = createArray(3);
 
-export default brainCalc = runEngine(rules, array);
+const brainCalc = runEngine(rules, array);
+export default brainCalc ;

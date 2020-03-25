@@ -41,4 +41,5 @@ const createArray = (limit) => {
 const rules = 'What number is missing in the progression?'
 const array = createArray(3);
 
-export default brainProgression = runEngine(rules, array);
+const brainProgression = runEngine(rules, array);
+export default brainProgression;

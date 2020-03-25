@@ -3,7 +3,7 @@ import {
   greetUser, askForName, sayHello,
 } from '../index.js';
 
-import explainRules from './brain-games-module.js';
+import explainRules from '../games/brain-games-module.js';
 
 greetUser;
 sayHello(askForName);

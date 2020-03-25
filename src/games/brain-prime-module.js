@@ -6,7 +6,7 @@ const generateRandomNumberInRange = (min, max) => {
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 };
 
-const randomNumber = generateRandomNumberInRange(1, 100);
+const randomNumber = () => generateRandomNumberInRange(1, 100);
 
 const isNumberPrime = (num) => {
   const array = [];
@@ -30,7 +30,7 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    let equation = randomNumber;
+    let equation = randomNumber();
     let solution = returnPrimeOrNot(equation);
     array.push([equation, solution]);
     iteration += 1;
@@ -41,4 +41,5 @@ const createArray = (limit) => {
 const rules = 'Answer "yes" if the given number is prime. Otherwise answer "no".'
 const array = createArray(3);
 
-export default brainPrime = runEngine(rules, array);
+const brainPrime = runEngine(rules, array);
+export default brainPrime;

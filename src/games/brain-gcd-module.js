@@ -45,4 +45,5 @@ const createArray = (limit) => {
 const rules = 'Find the greatest common divisor of the given numbers.'
 const array = createArray(3);
 
-export default brainGCD = runEngine(rules, array);
+const brainGCD = runEngine(rules, array);
+export default brainGCD ;
