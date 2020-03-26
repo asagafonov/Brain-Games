@@ -5,7 +5,7 @@ on: [pull_request, push]
 jobs:
   eslint:
     runs-on: ubuntu-latest
-    steps:
+    - name: linter
       uses: getsentry/action-eslint-fix@v1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
