@@ -1,0 +1,20 @@
+name: SwiftLint
+
+on:
+  push:
+    paths:
+      - '.github/workflows/eslint.yml'
+      - '.eslintrc.yml'
+      - '**/*.js'
+
+jobs:
+  SwiftLint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: GitHub Action for ESLint
+        uses: 123FLO321/action-eslint-standalone@1.0.0
+      - name: GitHub Action for ESLint with --max-warnings=0
+        uses: 123FLO321/action-eslint-standalone@1.0.0
+        with:
+          args: --max-warnings=0
