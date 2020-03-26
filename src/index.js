@@ -16,7 +16,6 @@ const sayHello = (name) => console.log(`Hello, ${name}!`);
 
 const intro = () => {
   greetUser;
-  askForName;
   sayHello(askForName);
 };
 
@@ -46,6 +45,7 @@ export {
   greetUser,
   askForName,
   sayHello,
+  intro,
   runEngine,
   generateRandomNumberInRange,
 };
