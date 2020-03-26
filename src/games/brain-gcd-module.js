@@ -1,10 +1,7 @@
-import runEngine from '../index.js';
-
-const generateRandomNumberInRange = (min, max) => {
-  const minValue = Math.ceil(min);
-  const maxValue = Math.floor(max);
-  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
-};
+import {
+  runEngine,
+  generateRandomNumberInRange,
+} from '../index.js';
 
 const getTwoNumbers = () => {
   const firstNumber = generateRandomNumberInRange(1, 100);

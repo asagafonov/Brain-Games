@@ -1,13 +1,29 @@
 import readlineSync from 'readline-sync';
 
+/* functions of general use */
+
+const generateRandomNumberInRange = (min, max) => {
+  const minValue = Math.ceil(min);
+  const maxValue = Math.floor(max);
+  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
+};
+
+/* game intro */
+
 const greetUser = console.log('\nWelcome to the Brain Games!');
 const askForName = readlineSync.question('May I have your name? ');
 const sayHello = (name) => console.log(`Hello, ${name}!`);
 
-const runEngine = (rules, arr) => {
+const intro = () => {
   greetUser;
   askForName;
   sayHello(askForName);
+};
+
+/* game engine */
+
+const runEngine = (rules, arr) => {
+  intro();
   console.log(rules);
   const array = [...arr];
   for (let i = 0; i < array.length; i += 1) {
@@ -26,8 +42,10 @@ const runEngine = (rules, arr) => {
   return console.log(`Congratulations, ${askForName}! You win!\n`);
 };
 
-export default runEngine;
-
 export {
-  greetUser, askForName, sayHello,
+  greetUser,
+  askForName,
+  sayHello,
+  runEngine,
+  generateRandomNumberInRange,
 };

@@ -1,5 +1,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/25d1c3eeeb0fe2916c95/maintainability)](https://codeclimate.com/github/asagafonov/frontend-project-lvl1/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/25d1c3eeeb0fe2916c95/test_coverage)](https://codeclimate.com/github/asagafonov/frontend-project-lvl1/test_coverage)
 ![](https://github.com/asagafonov/frontend-project-lvl1/workflows/Lint/badge.svg)
 
 
