@@ -1,15 +1,12 @@
 import generateRandomNumberInRange from '../utils/generate-random-number.js';
 import runEngine from '../index.js';
 
+const operators = ['+', '-', '*'];
+const operatorIndex = () => generateRandomNumberInRange(0, operators.length);
+
 const generateOperator = () => {
-  const operatorIndex = () => generateRandomNumberInRange(1, 4);
-  const operatorInd = operatorIndex();
-  if (operatorInd === 1) {
-    return '+';
-  } if (operatorInd === 2) {
-    return '-';
-  }
-  return '*';
+  const index = operatorIndex();
+  return operators[index];
 };
 
 const generateRandomEquation = () => {
@@ -25,12 +22,18 @@ const solveEquation = (string) => {
   const operator = eqToArray[1];
   const firstOperand = Number(eqToArray[0]);
   const secondOperand = Number(eqToArray[2]);
-  if (operator === '+') {
-    return String(firstOperand + secondOperand);
-  } if (operator === '-') {
-    return String(firstOperand - secondOperand);
+  let result;
+  switch (operator) {
+    case '-':
+      result = String(firstOperand - secondOperand);
+      break;
+    case '*':
+      result = String(firstOperand * secondOperand);
+      break;
+    default:
+      result = String(firstOperand + secondOperand);
   }
-  return String(firstOperand * secondOperand);
+  return result;
 };
 
 const createArray = (limit) => {
