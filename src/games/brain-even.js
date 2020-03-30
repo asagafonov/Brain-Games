@@ -5,6 +5,13 @@ const randomNumber = () => generateRandomNumberInRange(1, 100);
 
 const isEven = (num) => {
   if (num % 2 === 0) {
+    return true;
+  }
+  return false;
+};
+
+const returnEvenOrNot = (num) => {
+  if (isEven(num)) {
     return 'yes';
   }
   return 'no';
@@ -15,7 +22,7 @@ const createArray = (limit) => {
   let iteration = 0;
   while (iteration < limit) {
     const equation = randomNumber();
-    const solution = isEven(equation);
+    const solution = returnEvenOrNot(equation);
     array.push([equation, solution]);
     iteration += 1;
   }
