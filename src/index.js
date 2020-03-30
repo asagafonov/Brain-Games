@@ -14,13 +14,13 @@ const runEngine = (rules, arr) => {
     if (userAnswer === solution) {
       console.log(`Your answer is "${userAnswer}" \nCorrect!`);
       if (i === array.length - 1) {
-        return console.log(`Congratulations, ${askForName}! You win!\n`);
+        console.log(`Congratulations, ${askForName}! You win!\n`);
       }
     } else {
-      return console.log(`Your answer is "${userAnswer}" \n"${userAnswer}" is the wrong answer ;(. Correct answer was "${solution}" \nLet's try it again, ${askForName}!\n`);
+      console.log(`Your answer is "${userAnswer}" \n"${userAnswer}" is the wrong answer ;(. Correct answer was "${solution}" \nLet's try it again, ${askForName}!\n`);
+      break;
     }
   }
-  return console.log(`Congratulations, ${askForName}! You win!\n`);
 };
 
 export default runEngine;
