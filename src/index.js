@@ -1,20 +1,10 @@
 import readlineSync from 'readline-sync';
-
-/* game intro */
-
-const greetUser = console.log('\nWelcome to the Brain Games!');
-const askForName = readlineSync.question('May I have your name? ');
-const sayHello = (name) => console.log(`Hello, ${name}!`);
-
-const intro = () => {
-  greetUser;
-  sayHello(askForName);
-};
-
-/* game engine */
+import greetUser from './utils/greeting.js';
 
 const runEngine = (rules, arr) => {
-  intro();
+  console.log('Welcome to the Brain Games!');
+  const askForName = greetUser();
+  console.log(`Hello, ${askForName}`);
   console.log(rules);
   const array = [...arr];
   for (let i = 0; i < array.length; i += 1) {
@@ -33,10 +23,4 @@ const runEngine = (rules, arr) => {
   return console.log(`Congratulations, ${askForName}! You win!\n`);
 };
 
-export {
-  greetUser,
-  askForName,
-  sayHello,
-  intro,
-  runEngine,
-};
+export default runEngine;

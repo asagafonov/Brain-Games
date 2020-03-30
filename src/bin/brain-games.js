@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-import {
-  intro,
-} from '../index.js';
-
+import greetUser from '../utils/greeting.js';
 import explainRules from '../utils/game-instructions.js';
 
-intro();
+console.log('Welcome to the Brain Games!');
+const askForName = greetUser();
+console.log(`Hello, ${askForName}`);
 explainRules();

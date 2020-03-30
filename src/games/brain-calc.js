@@ -1,5 +1,5 @@
 import generateRandomNumberInRange from '../utils/generate-random-number.js';
-import { runEngine } from '../index.js';
+import runEngine from '../index.js';
 
 const generateOperator = () => {
   const operatorIndex = () => generateRandomNumberInRange(1, 4);
