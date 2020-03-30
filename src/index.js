@@ -1,13 +1,5 @@
 import readlineSync from 'readline-sync';
 
-/* functions of general use */
-
-const generateRandomNumberInRange = (min, max) => {
-  const minValue = Math.ceil(min);
-  const maxValue = Math.floor(max);
-  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
-};
-
 /* game intro */
 
 const greetUser = console.log('\nWelcome to the Brain Games!');
@@ -47,5 +39,4 @@ export {
   sayHello,
   intro,
   runEngine,
-  generateRandomNumberInRange,
 };

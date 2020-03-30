@@ -1,7 +1,5 @@
-import {
-  runEngine,
-  generateRandomNumberInRange,
-} from '../index.js';
+import generateRandomNumberInRange from '../non-game-modules/utils.js';
+import { runEngine } from '../index.js';
 
 const generateOperator = () => {
   const operatorIndex = () => generateRandomNumberInRange(1, 4);
