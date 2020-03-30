@@ -4,6 +4,9 @@ import runEngine from '../index.js';
 const randomNumber = () => generateRandomNumberInRange(1, 100);
 
 const isNumberPrime = (num) => {
+  if (num < 1) {
+    return false;
+  }
   const array = [];
   for (let i = num; i > 0; i -= 1) {
     if (num % i === 0) {
