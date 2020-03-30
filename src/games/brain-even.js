@@ -29,8 +29,9 @@ const createArray = (limit) => {
   return array;
 };
 
+const gameRounds = 3;
 const rules = 'Answer "yes" if the given number is even, otherwise answer "no".';
-const array = createArray(3);
+const array = createArray(gameRounds);
 
-const brainEven = () => runEngine(rules, array);
+const brainEven = () => runEngine(rules, array, gameRounds);
 export default brainEven;

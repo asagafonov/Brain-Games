@@ -1,19 +1,23 @@
 import readlineSync from 'readline-sync';
 import greetUser from './utils/greeting.js';
 
-const runEngine = (rules, arr) => {
+const runEngine = (rules, arr, rounds) => {
+  if (arr.length < rounds) {
+    console.log('Error. Not enough data to run the game');
+    return;
+  }
   console.log('Welcome to the Brain Games!');
   const askForName = greetUser();
-  console.log(`Hello, ${askForName}`);
+  console.log(`Hello, ${askForName}!`);
   console.log(rules);
   const array = [...arr];
-  for (let i = 0; i < array.length; i += 1) {
+  for (let i = 0; i < rounds; i += 1) {
     const equation = array[i][0];
     const solution = array[i][1];
     const userAnswer = readlineSync.question(`Question: ${equation} `);
     if (userAnswer === solution) {
       console.log(`Your answer is "${userAnswer}" \nCorrect!`);
-      if (i === array.length - 1) {
+      if (i === rounds - 1) {
         console.log(`Congratulations, ${askForName}! You win!\n`);
       }
     } else {

@@ -4,5 +4,5 @@ import explainRules from '../utils/game-instructions.js';
 
 console.log('Welcome to the Brain Games!');
 const askForName = greetUser();
-console.log(`Hello, ${askForName}`);
+console.log(`Hello, ${askForName}!`);
 explainRules();

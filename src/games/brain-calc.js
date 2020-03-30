@@ -48,8 +48,9 @@ const createArray = (limit) => {
   return array;
 };
 
+const gameRounds = 3;
 const rules = 'What is the result of the following expression?';
-const array = createArray(3);
+const array = createArray(gameRounds);
 
-const brainCalc = () => runEngine(rules, array);
+const brainCalc = () => runEngine(rules, array, gameRounds);
 export default brainCalc;

@@ -37,8 +37,9 @@ const createArray = (limit) => {
   return array;
 };
 
+const gameRounds = 3;
 const rules = 'Find the greatest common divisor of the given numbers.';
-const array = createArray(3);
+const array = createArray(gameRounds);
 
-const brainGCD = () => runEngine(rules, array);
+const brainGCD = () => runEngine(rules, array, gameRounds);
 export default brainGCD;
