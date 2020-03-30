@@ -1,4 +1,4 @@
-import generateRandomNumberInRange from '../non-game-modules/utils.js';
+import generateRandomNumberInRange from '../utils/generate-random-number.js';
 import { runEngine } from '../index.js';
 
 const getTwoNumbers = () => {

@@ -3,7 +3,7 @@ import {
   intro,
 } from '../index.js';
 
-import explainRules from '../non-game-modules/brain-games.js';
+import explainRules from '../utils/game-instructions.js';
 
 intro();
 explainRules();
