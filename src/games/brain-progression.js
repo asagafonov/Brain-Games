@@ -21,10 +21,10 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    const prStart = generateRandomNumberInRange(1, 100);
-    const prDiff = generateRandomNumberInRange(1, 11);
+    const pgrsStart = generateRandomNumberInRange(1, 100);
+    const pgrsDiff = generateRandomNumberInRange(1, 11);
     const digitsAmount = 10;
-    const progression = generateProgression(prStart, prDiff, digitsAmount);
+    const progression = generateProgression(pgrsStart, pgrsDiff, digitsAmount);
     const hiddenProgression = hideDigit(progression, digitsAmount);
     const hiddenProgressionToString = hiddenProgression.join(' ');
     const correctAnswer = String(progression[hiddenProgression.indexOf('..')]);
