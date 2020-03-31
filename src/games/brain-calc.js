@@ -9,19 +9,23 @@ const generateOperator = () => {
   return operators[index];
 };
 
-const generateRandomEquation = () => {
+const generateNumbers = () => {
+  const equation = [];
   const firstOperand = generateRandomNumberInRange(1, 100);
   const secondOperand = generateRandomNumberInRange(1, 100);
-  const operator = generateOperator();
-  const equation = `${firstOperand} ${operator} ${secondOperand}`;
+  equation.push(firstOperand, secondOperand);
   return equation;
 };
 
-const solveEquation = (string) => {
-  const eqToArray = string.split(' ');
-  const operator = eqToArray[1];
-  const firstOperand = Number(eqToArray[0]);
-  const secondOperand = Number(eqToArray[2]);
+const generateEquation = (numbers, operator) => {
+  const digits = [...numbers];
+  return `${digits[0]} ${operator} ${digits[1]}`;
+};
+
+const solveEquation = (numbers, operator) => {
+  const digits = [...numbers];
+  const firstOperand = digits[0];
+  const secondOperand = digits[1];
   let result;
   switch (operator) {
     case '-':
@@ -40,8 +44,10 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    const equation = generateRandomEquation();
-    const solution = solveEquation(equation);
+    const numbers = generateNumbers();
+    const operator = generateOperator()
+    const equation = generateEquation(numbers, operator);
+    const solution = solveEquation(numbers, operator);
     array.push([equation, solution]);
     iteration += 1;
   }
