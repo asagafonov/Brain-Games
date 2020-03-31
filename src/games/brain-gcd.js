@@ -1,4 +1,4 @@
-import generateRandomNumberInRange from '../utils/generate-random-number.js';
+import { generateRandomNumberInRange } from '../utils/utils.js';
 import runEngine from '../index.js';
 
 const getTwoNumbers = () => {

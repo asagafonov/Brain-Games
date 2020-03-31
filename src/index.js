@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetUser from './utils/greeting.js';
+import { greetUser } from './utils/utils.js';
 
 const runEngine = (rules, arr, rounds) => {
   if (arr.length < rounds) {
