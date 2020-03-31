@@ -11,16 +11,16 @@ lint:
 	npx eslint .
 
 progression:
-	npx node src/bin/brain-progression.js
+	node src/bin/brain-progression.js
 
 calc:
-	npx node src/bin/brain-calc.js
+	node src/bin/brain-calc.js
 
 even:
-	npx node src/bin/brain-even.js
+	node src/bin/brain-even.js
 
 prime:
-	npx node src/bin/brain-prime.js
+	node src/bin/brain-prime.js
 
 gcd:
-	npx node src/bin/brain-gcd.js
+	node src/bin/brain-gcd.js
