@@ -1,17 +1,9 @@
-import { generateRandomNumberInRange } from '../utils/utils.js';
+import { getTwoNumbers } from '../utils/utils.js';
 import runEngine from '../index.js';
-
-const getTwoNumbers = () => {
-  const result = [];
-  const firstNumber = generateRandomNumberInRange(1, 100);
-  const secondNumber = generateRandomNumberInRange(1, 100);
-  result.push(firstNumber, secondNumber);
-  return result;
-};
 
 const generateEquation = (numbers) => {
   const digits = [...numbers];
-  return `${digits[0]} ${digits[1]}`
+  return `${digits[0]} ${digits[1]}`;
 };
 
 const getGCD = (numbers) => {

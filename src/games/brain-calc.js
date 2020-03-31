@@ -1,4 +1,4 @@
-import { generateRandomNumberInRange } from '../utils/utils.js';
+import { generateRandomNumberInRange, getTwoNumbers } from '../utils/utils.js';
 import runEngine from '../index.js';
 
 const operators = ['+', '-', '*'];
@@ -7,14 +7,6 @@ const operatorIndex = () => generateRandomNumberInRange(0, operators.length);
 const generateOperator = () => {
   const index = operatorIndex();
   return operators[index];
-};
-
-const generateNumbers = () => {
-  const equation = [];
-  const firstOperand = generateRandomNumberInRange(1, 100);
-  const secondOperand = generateRandomNumberInRange(1, 100);
-  equation.push(firstOperand, secondOperand);
-  return equation;
 };
 
 const generateEquation = (numbers, operator) => {
@@ -44,8 +36,8 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    const numbers = generateNumbers();
-    const operator = generateOperator()
+    const numbers = getTwoNumbers();
+    const operator = generateOperator();
     const equation = generateEquation(numbers, operator);
     const solution = solveEquation(numbers, operator);
     array.push([equation, solution]);
