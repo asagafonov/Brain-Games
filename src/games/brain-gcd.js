@@ -2,35 +2,42 @@ import generateRandomNumberInRange from '../utils/generate-random-number.js';
 import runEngine from '../index.js';
 
 const getTwoNumbers = () => {
+  const result = [];
   const firstNumber = generateRandomNumberInRange(1, 100);
   const secondNumber = generateRandomNumberInRange(1, 100);
-  const result = `${firstNumber} ${secondNumber}`;
+  result.push(firstNumber, secondNumber);
   return result;
 };
 
-const getAnswer = (string) => {
-  const numArray = string.split(' ');
-  let firstNumber = Number(numArray[0]);
-  let secondNumber = Number(numArray[1]);
+const generateEquation = (numbers) => {
+  const digits = [...numbers];
+  return `${digits[0]} ${digits[1]}`
+};
+
+const getGCD = (numbers) => {
+  const digits = [...numbers];
+  let firstNumber = digits[0];
+  let secondNumber = digits[1];
   if (secondNumber > firstNumber) {
     [firstNumber, secondNumber] = [secondNumber, firstNumber];
   }
-  let result;
+  let gcd;
   for (let i = secondNumber; i > 0; i -= 1) {
     if (firstNumber % i === 0 && secondNumber % i === 0) {
-      result = i;
+      gcd = i;
       break;
     }
   }
-  return String(result);
+  return String(gcd);
 };
 
 const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    const equation = getTwoNumbers();
-    const solution = getAnswer(equation);
+    const numbers = getTwoNumbers();
+    const equation = generateEquation(numbers);
+    const solution = getGCD(numbers);
     array.push([equation, solution]);
     iteration += 1;
   }
