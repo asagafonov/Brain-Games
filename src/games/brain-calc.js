@@ -21,13 +21,13 @@ const solveEquation = (numbers, operator) => {
   let result;
   switch (operator) {
     case '-':
-      result = String(firstOperand - secondOperand);
+      result = firstOperand - secondOperand;
       break;
     case '*':
-      result = String(firstOperand * secondOperand);
+      result = firstOperand * secondOperand;
       break;
     default:
-      result = String(firstOperand + secondOperand);
+      result = firstOperand + secondOperand;
   }
   return result;
 };
@@ -39,7 +39,7 @@ const createArray = (limit) => {
     const numbers = getTwoNumbers();
     const operator = generateOperator();
     const equation = generateEquation(numbers, operator);
-    const solution = solveEquation(numbers, operator);
+    const solution = String(solveEquation(numbers, operator));
     array.push([equation, solution]);
     iteration += 1;
   }
@@ -47,8 +47,8 @@ const createArray = (limit) => {
 };
 
 const gameRounds = 3;
-const rules = 'What is the result of the following expression?';
-const array = createArray(gameRounds);
+const description = 'What is the result of the following expression?';
+const gameData = createArray(gameRounds);
 
-const brainCalc = () => runEngine(rules, array, gameRounds);
+const brainCalc = () => runEngine(description, gameData, gameRounds);
 export default brainCalc;

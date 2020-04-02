@@ -4,17 +4,11 @@ import runEngine from '../index.js';
 const randomNumber = () => generateRandomNumberInRange(1, 100);
 
 const isEven = (num) => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
+  return num % 2 === 0;
 };
 
 const returnEvenOrNot = (num) => {
-  if (isEven(num)) {
-    return 'yes';
-  }
-  return 'no';
+  return isEven(num) ? 'yes' : 'no';
 };
 
 const createArray = (limit) => {
@@ -30,8 +24,8 @@ const createArray = (limit) => {
 };
 
 const gameRounds = 3;
-const rules = 'Answer "yes" if the given number is even, otherwise answer "no".';
-const array = createArray(gameRounds);
+const description = 'Answer "yes" if the given number is even, otherwise answer "no".';
+const gameData = createArray(gameRounds);
 
-const brainEven = () => runEngine(rules, array, gameRounds);
+const brainEven = () => runEngine(description, gameData, gameRounds);
 export default brainEven;

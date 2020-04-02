@@ -8,8 +8,7 @@ const generateEquation = (numbers) => {
 
 const getGCD = (numbers) => {
   const digits = [...numbers];
-  let firstNumber = digits[0];
-  let secondNumber = digits[1];
+  let [firstNumber, secondNumber] = digits;
   if (secondNumber > firstNumber) {
     [firstNumber, secondNumber] = [secondNumber, firstNumber];
   }
@@ -20,7 +19,7 @@ const getGCD = (numbers) => {
       break;
     }
   }
-  return String(gcd);
+  return gcd;
 };
 
 const createArray = (limit) => {
@@ -29,7 +28,7 @@ const createArray = (limit) => {
   while (iteration < limit) {
     const numbers = getTwoNumbers();
     const equation = generateEquation(numbers);
-    const solution = getGCD(numbers);
+    const solution = String(getGCD(numbers));
     array.push([equation, solution]);
     iteration += 1;
   }
@@ -37,8 +36,8 @@ const createArray = (limit) => {
 };
 
 const gameRounds = 3;
-const rules = 'Find the greatest common divisor of the given numbers.';
-const array = createArray(gameRounds);
+const description = 'Find the greatest common divisor of the given numbers.';
+const gameData = createArray(gameRounds);
 
-const brainGCD = () => runEngine(rules, array, gameRounds);
+const brainGCD = () => runEngine(description, gameData, gameRounds);
 export default brainGCD;

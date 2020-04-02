@@ -35,8 +35,8 @@ const createArray = (limit) => {
 };
 
 const gameRounds = 3;
-const rules = 'What number is missing in the progression?';
-const array = createArray(gameRounds);
+const description = 'What number is missing in the progression?';
+const gameData = createArray(gameRounds);
 
-const brainProgression = () => runEngine(rules, array, gameRounds);
+const brainProgression = () => runEngine(description, gameData, gameRounds);
 export default brainProgression;

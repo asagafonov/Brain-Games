@@ -37,8 +37,8 @@ const createArray = (limit) => {
 };
 
 const gameRounds = 3;
-const rules = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
-const array = createArray(gameRounds);
+const description = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
+const gameData = createArray(gameRounds);
 
-const brainPrime = () => runEngine(rules, array, gameRounds);
+const brainPrime = () => runEngine(description, gameData, gameRounds);
 export default brainPrime;
