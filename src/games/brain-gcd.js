@@ -1,4 +1,4 @@
-import { generateRandomNumberInRange } from '../utils/utils.js';
+import generateRandomNumberInRange from '../utils/utils.js';
 import { runEngine, numberOfRounds } from '../index.js';
 
 const getGCD = (num1, num2) => {
