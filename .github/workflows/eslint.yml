@@ -35,15 +35,7 @@ jobs:
           make install
         # Add environment variables
         env:
-          CI: true
-      - name: install eslint
-        run: |
-          npm install eslint
-      - name: install missing dependencies
-        run: |
-          npm install acorn
-          npm install uri-js
-          npm install esprima
+          CI: true  
       - name: Run linter
         # Run Linter
         run: |
