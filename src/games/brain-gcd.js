@@ -1,14 +1,9 @@
-import { getTwoNumbers } from '../utils/utils.js';
+import { generateRandomNumberInRange } from '../utils/utils.js';
 import runEngine from '../index.js';
 
-const generateEquation = (numbers) => {
-  const digits = [...numbers];
-  return `${digits[0]} ${digits[1]}`;
-};
-
-const getGCD = (numbers) => {
-  const digits = [...numbers];
-  let [firstNumber, secondNumber] = digits;
+const getGCD = (num1, num2) => {
+  let firstNumber = num1;
+  let secondNumber = num2;
   if (secondNumber > firstNumber) {
     [firstNumber, secondNumber] = [secondNumber, firstNumber];
   }
@@ -26,9 +21,10 @@ const createArray = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
-    const numbers = getTwoNumbers();
-    const equation = generateEquation(numbers);
-    const solution = String(getGCD(numbers));
+    const firstNumber = generateRandomNumberInRange(1, 100);
+    const secondNumber = generateRandomNumberInRange(1, 100);
+    const equation = `${firstNumber} ${secondNumber}`;
+    const solution = String(getGCD(firstNumber, secondNumber));
     array.push([equation, solution]);
     iteration += 1;
   }

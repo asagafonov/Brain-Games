@@ -9,17 +9,8 @@ const generateRandomNumberInRange = (min, max) => {
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 };
 
-const getTwoNumbers = () => {
-  const result = [];
-  const firstNumber = generateRandomNumberInRange(1, 100);
-  const secondNumber = generateRandomNumberInRange(1, 100);
-  result.push(firstNumber, secondNumber);
-  return result;
-};
-
 export {
   greetUser,
   explainRules,
-  getTwoNumbers,
   generateRandomNumberInRange,
 };

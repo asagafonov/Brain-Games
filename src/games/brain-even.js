@@ -5,7 +5,7 @@ const randomNumber = () => generateRandomNumberInRange(1, 100);
 
 const isEven = (num) => num % 2 === 0;
 
-const returnEvenOrNot = (num) => isEven(num) ? 'yes' : 'no';
+const returnEvenOrNot = (num) => (isEven(num) ? 'yes' : 'no');
 
 const createArray = (limit) => {
   const array = [];
