@@ -1,16 +1,12 @@
 import readlineSync from 'readline-sync';
 import { greetUser } from './utils/utils.js';
 
-const runEngine = (description, arr, rounds) => {
-  if (arr.length < rounds) {
-    console.log('Error. Not enough data to run the game');
-    return;
-  }
+const runEngine = (description, data, rounds) => {
   console.log('Welcome to the Brain Games!');
   const askForName = greetUser();
   console.log(`Hello, ${askForName}!`);
   console.log(description);
-  const array = [...arr];
+  const array = [...data];
   for (let i = 0; i < rounds; i += 1) {
     const [equation, solution] = array[i];
     const userAnswer = readlineSync.question(`Question: ${equation} `);
@@ -28,4 +24,6 @@ const runEngine = (description, arr, rounds) => {
   }
 };
 
-export default runEngine;
+const numberOfRounds = 3;
+
+export { runEngine, numberOfRounds };

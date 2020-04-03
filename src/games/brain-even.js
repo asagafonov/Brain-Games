@@ -1,5 +1,5 @@
 import { generateRandomNumberInRange } from '../utils/utils.js';
-import runEngine from '../index.js';
+import { runEngine, numberOfRounds } from '../index.js';
 
 const randomNumber = () => generateRandomNumberInRange(1, 100);
 
@@ -7,7 +7,7 @@ const isEven = (num) => num % 2 === 0;
 
 const returnEvenOrNot = (num) => (isEven(num) ? 'yes' : 'no');
 
-const createArray = (limit) => {
+const generateGameData = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
@@ -19,9 +19,8 @@ const createArray = (limit) => {
   return array;
 };
 
-const gameRounds = 3;
 const description = 'Answer "yes" if the given number is even, otherwise answer "no".';
-const gameData = createArray(gameRounds);
+const gameData = generateGameData(numberOfRounds);
 
-const brainEven = () => runEngine(description, gameData, gameRounds);
+const brainEven = () => runEngine(description, gameData, numberOfRounds);
 export default brainEven;

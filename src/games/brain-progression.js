@@ -1,5 +1,5 @@
 import { generateRandomNumberInRange } from '../utils/utils.js';
-import runEngine from '../index.js';
+import { runEngine, numberOfRounds } from '../index.js';
 
 const generateProgression = (starter, difference, digitsNumber) => {
   const array = [];
@@ -17,7 +17,7 @@ const hideDigit = (arr, digitsNumber) => {
   return array;
 };
 
-const createArray = (limit) => {
+const generateGameData = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
@@ -34,9 +34,8 @@ const createArray = (limit) => {
   return array;
 };
 
-const gameRounds = 3;
 const description = 'What number is missing in the progression?';
-const gameData = createArray(gameRounds);
+const gameData = generateGameData(numberOfRounds);
 
-const brainProgression = () => runEngine(description, gameData, gameRounds);
+const brainProgression = () => runEngine(description, gameData, numberOfRounds);
 export default brainProgression;

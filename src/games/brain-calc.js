@@ -1,5 +1,5 @@
 import { generateRandomNumberInRange } from '../utils/utils.js';
-import runEngine from '../index.js';
+import { runEngine, numberOfRounds } from '../index.js';
 
 const operators = ['+', '-', '*'];
 const operatorIndex = () => generateRandomNumberInRange(0, operators.length);
@@ -26,7 +26,7 @@ const solveEquation = (num1, num2, operator) => {
   return result;
 };
 
-const createArray = (limit) => {
+const generateGameData = (limit) => {
   const array = [];
   let iteration = 0;
   while (iteration < limit) {
@@ -41,9 +41,8 @@ const createArray = (limit) => {
   return array;
 };
 
-const gameRounds = 3;
 const description = 'What is the result of the following expression?';
-const gameData = createArray(gameRounds);
+const gameData = generateGameData(numberOfRounds);
 
-const brainCalc = () => runEngine(description, gameData, gameRounds);
+const brainCalc = () => runEngine(description, gameData, numberOfRounds);
 export default brainCalc;
