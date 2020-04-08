@@ -1,7 +1,7 @@
 import generateRandomNumberInRange from '../utils/utils.js';
 import { runEngine, numberOfRounds } from '../index.js';
 
-const sayIsEvenOrNot = (num) => {
+const sayEvenOrNot = (num) => {
   if (num % 2 === 0) {
     return 'yes';
   }
@@ -12,8 +12,8 @@ const generateGameData = (limit) => {
   const data = [];
   for (let i = 0; i < limit; i += 1) {
     const question = generateRandomNumberInRange(1, 100);
-    const solution = sayIsEvenOrNot(question);
-    data.push([question, solution]);
+    const answer = sayEvenOrNot(question);
+    data.push([question, answer]);
   }
   return data;
 };

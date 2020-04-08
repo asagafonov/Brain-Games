@@ -1,9 +1,7 @@
 import generateRandomNumberInRange from '../utils/utils.js';
 import { runEngine, numberOfRounds } from '../index.js';
 
-const randomNumber = () => generateRandomNumberInRange(1, 100);
-
-const isNumberPrime = (num) => {
+const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
@@ -15,14 +13,14 @@ const isNumberPrime = (num) => {
   return true;
 };
 
-const returnPrimeOrNot = (num) => (isNumberPrime(num) ? 'yes' : 'no');
+const sayPrimeOrNot = (num) => (isPrime(num) ? 'yes' : 'no');
 
 const generateGameData = (limit) => {
   const data = [];
   for (let i = 0; i < limit; i += 1) {
-    const equation = randomNumber();
-    const solution = returnPrimeOrNot(equation);
-    data.push([equation, solution]);
+    const question = generateRandomNumberInRange(1, 100);
+    const answer = sayPrimeOrNot(question);
+    data.push([question, answer]);
   }
   return data;
 };

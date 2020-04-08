@@ -24,10 +24,10 @@ const generateGameData = (limit) => {
     const difference = generateRandomNumberInRange(1, 11);
     const length = 10;
     const progression = generateProgression(starter, difference, length);
-    const gameQuestion = getQuestion(progression, length);
-    const gameQuestionToString = gameQuestion.join(' ');
-    const correctAnswer = String(progression[gameQuestion.indexOf('..')]);
-    data.push([gameQuestionToString, correctAnswer]);
+    const question = getQuestion(progression, length);
+    const questionAsString = question.join(' ');
+    const answer = String(progression[question.indexOf('..')]);
+    data.push([questionAsString, answer]);
   }
   return data;
 };

@@ -29,9 +29,9 @@ const generateGameData = (limit) => {
     const firstNumber = generateRandomNumberInRange(1, 100);
     const secondNumber = generateRandomNumberInRange(1, 100);
     const operator = generateOperator();
-    const equation = `${firstNumber} ${operator} ${secondNumber}`;
-    const solution = String(calculate(firstNumber, secondNumber, operator));
-    data.push([equation, solution]);
+    const question = `${firstNumber} ${operator} ${secondNumber}`;
+    const answer = String(calculate(firstNumber, secondNumber, operator));
+    data.push([question, answer]);
   }
   return data;
 };

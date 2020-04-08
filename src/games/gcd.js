@@ -22,9 +22,9 @@ const generateGameData = (limit) => {
   for (let i = 0; i < limit; i += 1) {
     const firstNumber = generateRandomNumberInRange(1, 100);
     const secondNumber = generateRandomNumberInRange(1, 100);
-    const equation = `${firstNumber} ${secondNumber}`;
-    const solution = String(getGCD(firstNumber, secondNumber));
-    data.push([equation, solution]);
+    const question = `${firstNumber} ${secondNumber}`;
+    const answer = String(getGCD(firstNumber, secondNumber));
+    data.push([question, answer]);
   }
   return data;
 };
