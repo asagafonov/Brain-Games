@@ -18,21 +18,19 @@ const getGCD = (num1, num2) => {
 };
 
 const generateGameData = (limit) => {
-  const array = [];
-  let iteration = 0;
-  while (iteration < limit) {
+  const data = [];
+  for (let i = 0; i < limit; i += 1) {
     const firstNumber = generateRandomNumberInRange(1, 100);
     const secondNumber = generateRandomNumberInRange(1, 100);
     const equation = `${firstNumber} ${secondNumber}`;
     const solution = String(getGCD(firstNumber, secondNumber));
-    array.push([equation, solution]);
-    iteration += 1;
+    data.push([equation, solution]);
   }
-  return array;
+  return data;
 };
 
 const description = 'Find the greatest common divisor of the given numbers.';
 const gameData = generateGameData(numberOfRounds);
 
-const brainGCD = () => runEngine(description, gameData, numberOfRounds);
+const brainGCD = () => runEngine(description, gameData);
 export default brainGCD;

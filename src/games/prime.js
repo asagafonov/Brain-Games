@@ -4,10 +4,10 @@ import { runEngine, numberOfRounds } from '../index.js';
 const randomNumber = () => generateRandomNumberInRange(1, 100);
 
 const isNumberPrime = (num) => {
-  if (num <= 1) {
+  if (num < 2) {
     return false;
   }
-  for (let i = 2; i < num; i += 1) {
+  for (let i = 2; i <= num / 2; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -18,19 +18,17 @@ const isNumberPrime = (num) => {
 const returnPrimeOrNot = (num) => (isNumberPrime(num) ? 'yes' : 'no');
 
 const generateGameData = (limit) => {
-  const array = [];
-  let iteration = 0;
-  while (iteration < limit) {
+  const data = [];
+  for (let i = 0; i < limit; i += 1) {
     const equation = randomNumber();
     const solution = returnPrimeOrNot(equation);
-    array.push([equation, solution]);
-    iteration += 1;
+    data.push([equation, solution]);
   }
-  return array;
+  return data;
 };
 
 const description = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
 const gameData = generateGameData(numberOfRounds);
 
-const brainPrime = () => runEngine(description, gameData, numberOfRounds);
+const brainPrime = () => runEngine(description, gameData);
 export default brainPrime;

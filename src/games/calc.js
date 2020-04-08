@@ -2,47 +2,42 @@ import generateRandomNumberInRange from '../utils/utils.js';
 import { runEngine, numberOfRounds } from '../index.js';
 
 const operators = ['+', '-', '*'];
-const operatorIndex = () => generateRandomNumberInRange(0, operators.length);
 
 const generateOperator = () => {
-  const index = operatorIndex();
+  const index = generateRandomNumberInRange(0, operators.length);
   return operators[index];
 };
 
-const solveEquation = (num1, num2, operator) => {
-  const firstOperand = num1;
-  const secondOperand = num2;
+const calculate = (num1, num2, operator) => {
   let result;
   switch (operator) {
     case '-':
-      result = firstOperand - secondOperand;
+      result = num1 - num2;
       break;
     case '*':
-      result = firstOperand * secondOperand;
+      result = num1 * num2;
       break;
     default:
-      result = firstOperand + secondOperand;
+      result = num1 + num2;
   }
   return result;
 };
 
 const generateGameData = (limit) => {
-  const array = [];
-  let iteration = 0;
-  while (iteration < limit) {
+  const data = [];
+  for (let i = 0; i < limit; i += 1) {
     const firstNumber = generateRandomNumberInRange(1, 100);
     const secondNumber = generateRandomNumberInRange(1, 100);
     const operator = generateOperator();
     const equation = `${firstNumber} ${operator} ${secondNumber}`;
-    const solution = String(solveEquation(firstNumber, secondNumber, operator));
-    array.push([equation, solution]);
-    iteration += 1;
+    const solution = String(calculate(firstNumber, secondNumber, operator));
+    data.push([equation, solution]);
   }
-  return array;
+  return data;
 };
 
 const description = 'What is the result of the following expression?';
 const gameData = generateGameData(numberOfRounds);
 
-const brainCalc = () => runEngine(description, gameData, numberOfRounds);
+const brainCalc = () => runEngine(description, gameData);
 export default brainCalc;
