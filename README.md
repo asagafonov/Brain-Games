@@ -1,6 +1,15 @@
+CODE QUALITY BADGES
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/25d1c3eeeb0fe2916c95/maintainability)](https://codeclimate.com/github/asagafonov/frontend-project-lvl1/maintainability)
 ![](https://github.com/asagafonov/frontend-project-lvl1/workflows/Lint/badge.svg)
 
+INSTALLATION PROCESS
+
+To install the Brain Games package locally do the following:
+1. Clone the package from GitHub to a local directory
+2. Type "npm link" in the project directory via terminal
+
+HOW TO PLAY
 
 Launch brain-games to learn the rules
 [![asciicast](https://asciinema.org/a/bLvtqAMvzIBgYQTproDkYHC4T.svg)](https://asciinema.org/a/bLvtqAMvzIBgYQTproDkYHC4T)
