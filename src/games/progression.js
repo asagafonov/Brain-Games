@@ -21,7 +21,7 @@ const generateGameData = (limit) => {
   const data = [];
   for (let i = 0; i < limit; i += 1) {
     const starter = generateRandomNumberInRange(1, 100);
-    const difference = generateRandomNumberInRange(1, 11);
+    const difference = generateRandomNumberInRange(1, 21);
     const length = 10;
     const progression = generateProgression(starter, difference, length);
     const question = getQuestion(progression, length);
