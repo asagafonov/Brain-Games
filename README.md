@@ -13,13 +13,13 @@ HOW TO PLAY
 
 There are 5 games available in the Brain Games bundle.
 The rules are simple: answer 3 questions in a row to win.
-1. Type "brain-calc" to test your basic math skills.
-2. Type "brain-even" to play the odd/even game.
-3. Type "brain-gcd" to find the greatest common divisor.
-4. Type "brain-progression" to guess the missing number in a progression.
-5. Type "brain-prime" to guess whether the given number is prime.
+1. Type "brain-calc" to test your basic math skills
+2. Type "brain-even" to play the odd/even game
+3. Type "brain-gcd" to find the greatest common divisor
+4. Type "brain-progression" to guess the missing number in a progression
+5. Type "brain-prime" to guess whether the given number is prime
 
-Launch brain-games to explore the rules once again
+Launch brain-games to explore the rules once again.
 [![asciicast](https://asciinema.org/a/bLvtqAMvzIBgYQTproDkYHC4T.svg)](https://asciinema.org/a/bLvtqAMvzIBgYQTproDkYHC4T)
 
 Launch brain-calc and give 3 correct answers to win the game.
