@@ -25,7 +25,7 @@ const generateGameData = (limit) => {
     const progression = generateProgression(starter, difference, length);
     const hiddenDigitIndex = generateRandomNumberInRange(0, length);
     const question = hideDigit(progression, hiddenDigitIndex).join(' ');
-    const answer = progression[hiddenDigitIndex];
+    const answer = String(progression[hiddenDigitIndex]);
     data.push([question, answer]);
   }
   return data;
