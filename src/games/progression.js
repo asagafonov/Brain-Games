@@ -10,10 +10,9 @@ const generateProgression = (starter, difference, length) => {
   return progression;
 };
 
-const getQuestion = (progression, length) => {
+const hideDigit = (progression, index) => {
   const newProgression = [...progression];
-  const hiddenDigitIndex = generateRandomNumberInRange(0, length);
-  newProgression[hiddenDigitIndex] = '..';
+  newProgression[index] = '..';
   return newProgression;
 };
 
@@ -24,10 +23,10 @@ const generateGameData = (limit) => {
     const difference = generateRandomNumberInRange(1, 21);
     const length = 10;
     const progression = generateProgression(starter, difference, length);
-    const question = getQuestion(progression, length);
-    const questionAsString = question.join(' ');
-    const answer = String(progression[question.indexOf('..')]);
-    data.push([questionAsString, answer]);
+    const hiddenDigitIndex = generateRandomNumberInRange(0, length);
+    const question = hideDigit(progression, hiddenDigitIndex).join(' ');
+    const answer = progression[hiddenDigitIndex];
+    data.push([question, answer]);
   }
   return data;
 };
