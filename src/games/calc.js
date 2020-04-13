@@ -11,6 +11,9 @@ const generateOperator = () => {
 const calculate = (num1, num2, operator) => {
   let result;
   switch (operator) {
+    case '+':
+      result = num1 + num2;
+      break;
     case '-':
       result = num1 - num2;
       break;
@@ -18,7 +21,7 @@ const calculate = (num1, num2, operator) => {
       result = num1 * num2;
       break;
     default:
-      result = num1 + num2;
+      result = null;
   }
   return result;
 };
