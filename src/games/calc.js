@@ -21,7 +21,7 @@ const calculate = (num1, num2, operator) => {
       result = num1 * num2;
       break;
     default:
-      result = null;
+      result = 'undefined';
   }
   return result;
 };
