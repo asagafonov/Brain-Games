@@ -4,7 +4,7 @@ import { runEngine, numberOfRounds } from '../index.js';
 const operators = ['+', '-', '*'];
 
 const generateOperator = () => {
-  const index = generateRandomNumberInRange(0, operators.length);
+  const index = generateRandomNumberInRange(0, operators.length - 1);
   return operators[index];
 };
 
