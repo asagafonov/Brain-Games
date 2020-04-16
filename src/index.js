@@ -9,7 +9,8 @@ const runEngine = (description, data) => {
     const [equation, solution] = data[i];
     const userAnswer = readlineSync.question(`Question: ${equation} `);
     if (userAnswer === solution) {
-      console.log(`Your answer is "${userAnswer}" \nCorrect!`);
+      console.log(`Your answer is "${userAnswer}"`);
+      console.log('Correct!');
     } else {
       console.log(`Your answer is "${userAnswer}"`);
       console.log(`"${userAnswer}" is the wrong answer ;(. Correct answer was "${solution}"`);
