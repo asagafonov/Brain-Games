@@ -1,5 +1,5 @@
 import generateRandomNumberInRange from '../utils/utils.js';
-import { runEngine, numberOfRounds } from '../index.js';
+import runEngine from '../index.js';
 
 const operators = ['+', '-', '*'];
 
@@ -40,7 +40,6 @@ const generateGameData = (limit) => {
 };
 
 const description = 'What is the result of the following expression?';
-const gameData = generateGameData(numberOfRounds);
 
-const brainCalc = () => runEngine(description, gameData);
+const brainCalc = () => runEngine(description, generateGameData);
 export default brainCalc;

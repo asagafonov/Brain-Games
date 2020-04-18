@@ -1,5 +1,5 @@
 import generateRandomNumberInRange from '../utils/utils.js';
-import { runEngine, numberOfRounds } from '../index.js';
+import runEngine from '../index.js';
 
 const getGCD = (num1, num2) => {
   let firstNumber = num1;
@@ -30,7 +30,6 @@ const generateGameData = (limit) => {
 };
 
 const description = 'Find the greatest common divisor of the given numbers.';
-const gameData = generateGameData(numberOfRounds);
 
-const brainGCD = () => runEngine(description, gameData);
+const brainGCD = () => runEngine(description, generateGameData);
 export default brainGCD;

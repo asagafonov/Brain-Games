@@ -1,5 +1,5 @@
 import generateRandomNumberInRange from '../utils/utils.js';
-import { runEngine, numberOfRounds } from '../index.js';
+import runEngine from '../index.js';
 
 const generateProgression = (starter, difference, length) => {
   const progression = [];
@@ -32,7 +32,6 @@ const generateGameData = (limit) => {
 };
 
 const description = 'What number is missing in the progression?';
-const gameData = generateGameData(numberOfRounds);
 
-const brainProgression = () => runEngine(description, gameData);
+const brainProgression = () => runEngine(description, generateGameData);
 export default brainProgression;

@@ -1,5 +1,5 @@
 import generateRandomNumberInRange from '../utils/utils.js';
-import { runEngine, numberOfRounds } from '../index.js';
+import runEngine from '../index.js';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -24,7 +24,6 @@ const generateGameData = (limit) => {
 };
 
 const description = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
-const gameData = generateGameData(numberOfRounds);
 
-const brainPrime = () => runEngine(description, gameData);
+const brainPrime = () => runEngine(description, generateGameData);
 export default brainPrime;

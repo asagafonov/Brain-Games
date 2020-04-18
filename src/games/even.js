@@ -1,5 +1,5 @@
 import generateRandomNumberInRange from '../utils/utils.js';
-import { runEngine, numberOfRounds } from '../index.js';
+import runEngine from '../index.js';
 
 const isEven = (num) => num % 2 === 0;
 
@@ -14,7 +14,6 @@ const generateGameData = (limit) => {
 };
 
 const description = 'Answer "yes" if the given number is even, otherwise answer "no".';
-const gameData = generateGameData(numberOfRounds);
 
-const brainEven = () => runEngine(description, gameData);
+const brainEven = () => runEngine(description, generateGameData);
 export default brainEven;
